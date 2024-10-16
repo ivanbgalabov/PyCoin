@@ -17,7 +17,10 @@ def get_historical_data_block(product_id, start_time, end_time, granularity = 60
 	if response.status_code == 200:
 		data = response.json()
 		data_df = pd.DataFrame(data, columns = ['time', 'low','high','open','close','volume'] )
-		data_df 
+		
+		data_df["date"] = pd.to_datetime(data_df['time'], unit = 's')
+
+		data_df.set_index('date', inplace = True)
 		print("returned data frame")
 		return data_df
 
@@ -31,4 +34,4 @@ end_date = datetime(2024,10,11)
 data = get_historical_data_block(product_id, start_date, end_date, granularity = 3600)
 
 
-print(data_df)
+print(data)
