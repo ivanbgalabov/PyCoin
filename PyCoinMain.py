@@ -2,9 +2,8 @@
 
 import os
 import requests
-import time
 import pandas as pd
-from datetime import datetime, date, timedelta
+from datetime import datetime, date, timedelta, time
 #filename = f"{asset}_{date}"
 
 #GLOBAL VARIABLES
@@ -54,13 +53,14 @@ def get_asset_data(asset, date = currentdate):
 	
 	coin = asset
 	startdate = date
-	#date2 = date + timedelta(hours = 4)
 	year = date.strftime("%Y")
 	month = date.strftime("%m")
 
 	filename = f"{asset}_{date}"
 	folder_path = os.path.join(archivepath, asset, year, month)
 	filepath = os.path.join(folder_path, filename)
+	if type(currentdate):
+		pass
 
 	#1 check if folder exists
 	if not os.path.exists(folder_path):
@@ -75,7 +75,7 @@ def get_asset_data(asset, date = currentdate):
 		print(f"Loaded existing file: {filepath}")
 
 	else:
-		#get_historical_data(coin, date, date2)
+		df = #get_historical_data(coin, date, date2)
 		#start_time = startdate.datetime()
 		print(startdate)
 
@@ -138,3 +138,5 @@ iso_date_string  = "2024-10-15"
 date_object = datetime.fromisoformat(iso_date_string)
 
 #get_data("BTC_USD", "2024-10-15")
+
+print(type(exactdate))

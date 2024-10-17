@@ -34,4 +34,16 @@ end_date = datetime(2024,10,11)
 data = get_historical_data_block(product_id, start_date, end_date, granularity = 3600)
 
 
-print(data)
+#print(data)
+
+timelist = [()]
+
+# for time1,time2 in timelist:
+# 	print(time1, time2)
+
+#get_historical_data_block()
+
+
+time1 = datetime.time(14, 30, 0)
+
+print(time1)
