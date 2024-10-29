@@ -28,10 +28,10 @@ def get_historical_data_block(product_id, start_time, end_time, granularity = 60
 		raise Exception(f"Error: {response.status_code}, {response.text}")
 
 product_id = 'BTC-USD'
-start_date = datetime(2024,10,10)
-end_date = datetime(2024,10,11)
+start_date = datetime(2024,10,26)
+end_date = datetime(2024,10,27)
 
-data = get_historical_data_block(product_id, start_date, end_date, granularity = 3600)
+data = get_historical_data_block(product_id, start_date, end_date, granularity = 900)
 
 
 #print(data)
@@ -44,6 +44,6 @@ timelist = [()]
 #get_historical_data_block()
 
 
-time1 = datetime.time(14, 30, 0)
+time1 = datetime.now()
 
-print(time1)
+print(data)
